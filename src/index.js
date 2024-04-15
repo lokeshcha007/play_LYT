@@ -1,12 +1,37 @@
 //require("dotenv").config();
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import app from "./app.js"
 
 dotenv.config({
   path: "./env",
 });
 
-connectDB();
+
+connectDB(process.env.PORT,()=>{
+  console.log(`Server listening at ${process.env.PORT}`)
+})
+.then(()=>{
+  app.listen()
+})
+.catch((err)=>{
+  console.log("DB connection failed" , err);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // IIFI METHOD APPROACH
 // import  express  from "express";
