@@ -1,8 +1,8 @@
-class apiError extends Error(){
+class apiError extends Error{
     constructor(statusCode,
         message = "something went wrong",
-        errors=[],
-        stack="")
+        errors = [],
+        stack = "")
         {
          super(message)
          this.statusCode = statusCode
@@ -21,3 +21,5 @@ class apiError extends Error(){
 }
 
 export  {apiError}
+
+
